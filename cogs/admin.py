@@ -79,7 +79,7 @@ class Admin:
     async def debug(self, ctx):
         list_message = ctx.content.split()
         if len(list_message) < 1:
-            embed = discord.Embed(title="PUBG BOT 도우미", description='사용하실 커맨드를 작성해주세요.', color=self.color)
+            embed = discord.Embed(title="PUBG BOT ajudante", description='Por favor, escreva o comando que você deseja usar.', color=self.color)
             await ctx.send(embed=embed)
             return
         cmd = " ".join(list_message[1:])
@@ -121,9 +121,9 @@ class Admin:
             microsecond = (round(float(f"0.{(time2 - time1).microseconds}"), 3))
             second = (time2 - time1).seconds
             try:
-                embed.set_field_at(1, name="출력", value=f"```py\n{result}\n```", inline=False)
-                embed.set_field_at(2, name="출력(Type)", value=f"```py\n{type(result)}\n```", inline=False)
-                embed.set_field_at(3, name="소요시간", value=f"```\n{second + microsecond}초\n```", inline=False)
+                embed.set_field_at(1, name="Imprimir", value=f"```py\n{result}\n```", inline=False)
+                embed.set_field_at(2, name="Imprimir(Type)", value=f"```py\n{type(result)}\n```", inline=False)
+                embed.set_field_at(3, name="tempo gasto", value=f"```\n{second + microsecond}초\n```", inline=False)
                 await msg.edit(embed=embed)
             except discord.errors.HTTPException:
                 with open("debug_result.txt", "w") as f:
@@ -147,7 +147,7 @@ class Admin:
         if len(list_message) < 1:
             embed = discord.Embed(
                 title="PUBG BOT 도우미",
-                description="!=cmd <명령어>\n명령어를 입력해주세요!",
+                description="!=cmd <comando>\nPor favor, digite o comando!",
                 color=self.color
             )
             await ctx.send(embed=embed)
